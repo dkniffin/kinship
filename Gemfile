@@ -20,6 +20,7 @@ gem "devise-jwt", "~> 0.5.9"
 gem "flipper", "~> 0.16"
 gem "flipper-active_record", "~> 0.16"
 gem "flipper-ui", "~> 0.16"
+gem "graphql", "~> 1.9"
 gem "mailgun-ruby", "~> 1.1"
 gem "pg", "~> 1.1.0"
 gem "puma", "~> 3.7"
@@ -49,6 +50,7 @@ end
 
 group :development do
   gem "bullet"
+  gem "graphiql-rails"
   gem "letter_opener"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "web-console", ">= 3.3.0"
