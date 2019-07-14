@@ -5,11 +5,10 @@ class GenealogySeeds
     def run
       ned_stark = Individual.create(first_name: "Eddard", last_name: "Stark", sex: :male)
       catelyn_tully = Individual.create(first_name: "Catelyn", last_name: "Tully", sex: :female)
-      # Relationship.create(
-      #   individual_one: ned_stark,
-      #   individual_two: catelyn_tully,
-      #   relationship_type: RelationshipType.marriage
-      # )
+      Relationship.create(
+        individual_one: ned_stark,
+        individual_two: catelyn_tully
+      )
 
       robb_stark = Individual.create(first_name: "Robb", last_name: "Stark", sex: :male)
       Birth.create(individual: robb_stark, mother: catelyn_tully, father: ned_stark)
