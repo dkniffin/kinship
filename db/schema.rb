@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_14_013609) do
+ActiveRecord::Schema.define(version: 2019_07_14_153219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,12 @@ ActiveRecord::Schema.define(version: 2019_07_14_013609) do
     t.datetime "updated_at", null: false
     t.index ["individual_one_id"], name: "index_relationships_on_individual_one_id"
     t.index ["individual_two_id"], name: "index_relationships_on_individual_two_id"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.string "source_info"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "births", "individuals"
