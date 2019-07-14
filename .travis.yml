@@ -22,3 +22,4 @@ before_script:
   - bundle exec rake db:test:prepare --trace
 script:
   - bin/run-tests
+  - bundle-audit --update

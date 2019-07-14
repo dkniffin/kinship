@@ -14,4 +14,10 @@
 
 class Individual < ApplicationRecord
   enum sex: %i[male female]
+
+  has_one :birth, dependent: :destroy
+  has_many :children_births, ->(individual) { # rubocop:disable Rails/InverseOf
+    unscope(:where).where("mother_id = :id OR father_id = :id", id: individual.id)
+  }, class_name: "Birth", dependent: :nullify
+  has_many :children, through: :children_births, foreign_key: :individual_id
 end

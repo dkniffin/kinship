@@ -119,6 +119,10 @@ Style/FormatStringToken:
 Style/NumericLiterals:
   Enabled: false
 
+# Reason: Multiline lambdas still read fine with the arrow syntax
+Style/Lambda:
+  Enabled: false
+
 # ==================== Rails ====================
 
 # Reason: We do rails

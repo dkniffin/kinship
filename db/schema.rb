@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_07_123852) do
+ActiveRecord::Schema.define(version: 2019_07_07_125332) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "births", force: :cascade do |t|
+    t.datetime "occurred_at"
+    t.text "notes"
+    t.bigint "individual_id"
+    t.bigint "father_id"
+    t.bigint "mother_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["father_id"], name: "index_births_on_father_id"
+    t.index ["individual_id"], name: "index_births_on_individual_id"
+    t.index ["mother_id"], name: "index_births_on_mother_id"
+  end
 
   create_table "flipper_features", force: :cascade do |t|
     t.string "key", null: false
@@ -39,4 +52,7 @@ ActiveRecord::Schema.define(version: 2019_07_07_123852) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "births", "individuals"
+  add_foreign_key "births", "individuals", column: "father_id"
+  add_foreign_key "births", "individuals", column: "mother_id"
 end
