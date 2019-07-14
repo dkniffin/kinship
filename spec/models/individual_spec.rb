@@ -9,4 +9,5 @@ RSpec.describe Individual, type: :model do
 
   it { is_expected.to have_one(:birth) }
   it { is_expected.to have_many(:children_births) }
+  it { is_expected.to have_many(:children) }
 end
