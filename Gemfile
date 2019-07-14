@@ -15,6 +15,7 @@ gem "active_interaction", "~> 3.7"
 gem "activeadmin"
 gem "airbrake", "~> 9.2"
 gem "bootsnap", ">= 1.1.0", require: false
+gem "devise", "~> 4.6"
 gem "flipper", "~> 0.16"
 gem "flipper-active_record", "~> 0.16"
 gem "flipper-ui", "~> 0.16"
