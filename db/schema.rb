@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_14_153219) do
+ActiveRecord::Schema.define(version: 2019_07_14_153511) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 2019_07_14_153219) do
     t.index ["father_id"], name: "index_births_on_father_id"
     t.index ["individual_id"], name: "index_births_on_individual_id"
     t.index ["mother_id"], name: "index_births_on_mother_id"
+  end
+
+  create_table "citations", force: :cascade do |t|
+    t.bigint "source_id"
+    t.string "citable_type"
+    t.bigint "citable_id"
+    t.string "citation_details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["citable_type", "citable_id"], name: "index_citations_on_citable_type_and_citable_id"
+    t.index ["source_id"], name: "index_citations_on_source_id"
   end
 
   create_table "flipper_features", force: :cascade do |t|
@@ -72,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_07_14_153219) do
   add_foreign_key "births", "individuals"
   add_foreign_key "births", "individuals", column: "father_id"
   add_foreign_key "births", "individuals", column: "mother_id"
+  add_foreign_key "citations", "sources"
   add_foreign_key "relationships", "individuals", column: "individual_one_id"
   add_foreign_key "relationships", "individuals", column: "individual_two_id"
 end

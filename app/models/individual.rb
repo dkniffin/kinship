@@ -13,6 +13,7 @@
 #
 
 class Individual < ApplicationRecord
+  include Citable
   enum sex: %i[male female]
 
   has_one :birth, dependent: :destroy

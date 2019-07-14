@@ -15,6 +15,7 @@
 #
 
 class Birth < ApplicationRecord
+  include Citable
   belongs_to :individual
   belongs_to :father, class_name: "Individual"
   belongs_to :mother, class_name: "Individual"

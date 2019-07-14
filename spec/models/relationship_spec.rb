@@ -8,4 +8,6 @@ RSpec.describe Relationship, type: :model do
 
   it { is_expected.to belong_to(:individual_one) }
   it { is_expected.to belong_to(:individual_two) }
+
+  it_behaves_like "a citable object"
 end

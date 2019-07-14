@@ -14,6 +14,7 @@
 #
 
 class Relationship < ApplicationRecord
+  include Citable
   belongs_to :individual_one, class_name: "Individual"
   belongs_to :individual_two, class_name: "Individual"
 end
