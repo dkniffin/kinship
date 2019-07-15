@@ -21,4 +21,6 @@ class Individual < ApplicationRecord
     unscope(:where).where("mother_id = :id OR father_id = :id", id: individual.id)
   }, class_name: "Birth", dependent: :nullify
   has_many :children, through: :children_births, source: :individual
+  has_one :father, through: :birth
+  has_one :mother, through: :birth
 end
