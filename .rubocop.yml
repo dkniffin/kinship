@@ -146,6 +146,7 @@ RSpec/DescribeClass:
     - spec/tasks/*
     - spec/seeds/*
     - spec/system/*
+    - spec/graphql/schema_spec.rb
 
 # Reason: Too hard to enforce in some cases
 RSpec/MultipleExpectations:

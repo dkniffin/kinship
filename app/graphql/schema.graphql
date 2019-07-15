@@ -1,0 +1,20 @@
+type Individual {
+  children: [Individual!]!
+  firstName: String
+  lastName: String
+  sex: String
+}
+
+type Mutation {
+  """
+  An example field added by the generator
+  """
+  testField: String!
+}
+
+type Query {
+  """
+  An individual person
+  """
+  individual(id: ID!): Individual!
+}
