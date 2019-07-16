@@ -4,7 +4,7 @@ class UserSeeds
   class << self
     def run
       # For example:
-      # FactoryBot.create_list(:user, 10)
+      User.create(email: "foo@bar.com", password: "password1!")
     end
   end
 end

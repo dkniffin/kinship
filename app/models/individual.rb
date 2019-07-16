@@ -23,4 +23,7 @@ class Individual < ApplicationRecord
   has_many :children, through: :children_births, source: :individual
   has_one :father, through: :birth
   has_one :mother, through: :birth
+  has_many :relationships, ->(individual) { # rubocop:disable Rails/InverseOf
+    unscope(:where).where("individual_one_id = :id OR individual_two_id = :id", id: individual.id)
+  }, class_name: "Relationship", dependent: :nullify
 end

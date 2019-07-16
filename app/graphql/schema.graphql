@@ -1,8 +1,26 @@
+type Birth {
+  createdAt: String!
+  father: Individual
+  id: ID!
+  individual: Individual
+  mother: Individual
+  notes: String
+  occurredAt: String
+  updatedAt: String!
+}
+
 type Individual {
+  birth: Birth
   children: [Individual!]!
+  createdAt: String!
+  father: Individual
   firstName: String
+  id: ID!
   lastName: String
+  mother: Individual
+  relationships: [Relationship!]!
   sex: String
+  updatedAt: String!
 }
 
 type Mutation {
@@ -14,7 +32,25 @@ type Mutation {
 
 type Query {
   """
-  An individual person
+  A birth of an individual
+  """
+  birth(id: ID!): Birth!
+
+  """
+  A person
   """
   individual(id: ID!): Individual!
+
+  """
+  A relationship between two individuals (eg a marriage)
+  """
+  relationship(id: ID!): Relationship!
+}
+
+type Relationship {
+  createdAt: String!
+  id: ID!
+  individualOne: Individual
+  individualTwo: Individual
+  updatedAt: String!
 }
