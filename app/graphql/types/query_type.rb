@@ -1,48 +1,20 @@
 # frozen_string_literal: true
 
+require_relative "../resolvers/individual_resolver"
+require_relative "../resolvers/birth_resolver"
+require_relative "../resolvers/relationship_resolver"
+require_relative "../resolvers/source_resolver"
+require_relative "../resolvers/citation_resolver"
+
 module Types
   class QueryType < Types::BaseObject
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    field :individual, Types::Individual, null: false do
-      argument :id, ID, required: true
-    end
-
-    def individual(id:)
-      ::Individual.find(id)
-    end
-
-    field :birth, Types::Birth, null: false do
-      argument :id, ID, required: true
-    end
-
-    def birth(id:)
-      ::Birth.find(id)
-    end
-
-    field :relationship, Types::Relationship, null: false do
-      argument :id, ID, required: true
-    end
-
-    def relationship(id:)
-      ::Relationship.find(id)
-    end
-
-    field :source, Types::Source, null: false do
-      argument :id, ID, required: true
-    end
-
-    def source(id:)
-      ::Source.find(id)
-    end
-
-    field :citation, Types::Citation, null: false do
-      argument :id, ID, required: true
-    end
-
-    def citation(id:)
-      ::Citation.find(id)
-    end
+    field :individual, resolver: Resolvers::Individual
+    field :birth, resolver: Resolvers::Birth
+    field :relationship, resolver: Resolvers::Relationship
+    field :source, resolver: Resolvers::Source
+    field :citation, resolver: Resolvers::Citation
   end
 end
