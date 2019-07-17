@@ -2,6 +2,8 @@
 
 module Types
   class Individual < Types::BaseObject
+    description "A person"
+
     field :id, ID, null: false
     field :created_at, String, null: false
     field :updated_at, String, null: false
@@ -13,5 +15,7 @@ module Types
     field :father, Types::Individual, null: true
     field :mother, Types::Individual, null: true
     field :relationships, [Types::Relationship], null: false
+    field :sources, [Types::Source], null: false
+    field :citations, [Types::Citation], null: false
   end
 end

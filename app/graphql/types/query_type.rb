@@ -6,7 +6,6 @@ module Types
     # They will be entry points for queries on your schema.
 
     field :individual, Types::Individual, null: false do
-      description "A person"
       argument :id, ID, required: true
     end
 
@@ -15,7 +14,6 @@ module Types
     end
 
     field :birth, Types::Birth, null: false do
-      description "A birth of an individual"
       argument :id, ID, required: true
     end
 
@@ -24,12 +22,27 @@ module Types
     end
 
     field :relationship, Types::Relationship, null: false do
-      description "A relationship between two individuals (eg a marriage)"
       argument :id, ID, required: true
     end
 
     def relationship(id:)
       ::Relationship.find(id)
+    end
+
+    field :source, Types::Source, null: false do
+      argument :id, ID, required: true
+    end
+
+    def source(id:)
+      ::Source.find(id)
+    end
+
+    field :citation, Types::Citation, null: false do
+      argument :id, ID, required: true
+    end
+
+    def citation(id:)
+      ::Citation.find(id)
     end
   end
 end

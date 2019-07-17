@@ -1,4 +1,8 @@
+"""
+A birth of an individual
+"""
 type Birth {
+  citations: [Citation!]!
   createdAt: String!
   father: Individual
   id: ID!
@@ -6,12 +10,34 @@ type Birth {
   mother: Individual
   notes: String
   occurredAt: String
+  sources: [Source!]!
   updatedAt: String!
 }
 
+"""
+Objects which may be cited
+"""
+union Citable = Birth | Individual | Relationship
+
+"""
+A connection between an event or fact and it's source
+"""
+type Citation {
+  citable: Citable!
+  citationDetails: String
+  createdAt: String!
+  id: ID!
+  source: Source!
+  updatedAt: String!
+}
+
+"""
+A person
+"""
 type Individual {
   birth: Birth
   children: [Individual!]!
+  citations: [Citation!]!
   createdAt: String!
   father: Individual
   firstName: String
@@ -20,6 +46,7 @@ type Individual {
   mother: Individual
   relationships: [Relationship!]!
   sex: String
+  sources: [Source!]!
   updatedAt: String!
 }
 
@@ -31,26 +58,33 @@ type Mutation {
 }
 
 type Query {
-  """
-  A birth of an individual
-  """
   birth(id: ID!): Birth!
-
-  """
-  A person
-  """
+  citation(id: ID!): Citation!
   individual(id: ID!): Individual!
-
-  """
-  A relationship between two individuals (eg a marriage)
-  """
   relationship(id: ID!): Relationship!
+  source(id: ID!): Source!
 }
 
+"""
+A relationship between two individuals (eg a marriage)
+"""
 type Relationship {
+  citations: [Citation!]!
   createdAt: String!
   id: ID!
   individualOne: Individual
   individualTwo: Individual
+  sources: [Source!]!
+  updatedAt: String!
+}
+
+"""
+A source of information (eg, Birth Certificate, Census, etc)
+"""
+type Source {
+  createdAt: String!
+  id: ID!
+  name: String!
+  sourceInfo: String
   updatedAt: String!
 }
