@@ -32,5 +32,10 @@ module Kinship
     # Don't generate system test files.
     config.generators.system_tests = nil
     config.middleware.use ActionDispatch::Flash
+    config.autoload_paths += %W[
+      #{config.root}/app/graphql/resolvers
+      #{config.root}/app/graphql/mutations
+      #{config.root}/app/graphql/types
+    ]
   end
 end

@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-module Resolvers
-  class Birth < Resolvers::ResolverBase
-    type Types::Birth, null: false
+class BirthResolver < ResolverBase
+  type BirthType, null: false
 
-    argument :id, ID, required: true
+  argument :id, ID, required: true
 
-    def resolve(id: nil)
-      ::Birth.find(id)
-    end
+  def resolve(id: nil)
+    ::Birth.find(id)
   end
 end
