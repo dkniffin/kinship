@@ -61,6 +61,7 @@ type Query {
   birth(id: ID!): Birth!
   citation(id: ID!): Citation!
   individual(id: ID!): Individual!
+  individuals: [Individual!]!
   relationship(id: ID!): Relationship!
   source(id: ID!): Source!
 }

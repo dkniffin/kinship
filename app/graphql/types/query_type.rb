@@ -5,6 +5,7 @@ class QueryType < TypeBase
   # They will be entry points for queries on your schema.
 
   field :individual, resolver: IndividualResolver
+  field :individuals, resolver: IndividualsResolver
   field :birth, resolver: BirthResolver
   field :relationship, resolver: RelationshipResolver
   field :source, resolver: SourceResolver
