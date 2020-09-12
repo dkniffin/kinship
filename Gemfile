@@ -7,7 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby "2.4.2"
+ruby File.read(File.expand_path("../.ruby-version", __FILE__)).strip
 
 gem "rails", "~> 5.2.1"
 
@@ -39,10 +39,13 @@ group :development, :test do
   gem "faker"
   gem "foreman"
   gem "pry-byebug"
+  gem "pry-rescue"
+  gem "pry-stack_explorer"
   gem "rails-erd"
   gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-rspec"
+  gem "rubocop-performance"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
   gem "simplecov"
