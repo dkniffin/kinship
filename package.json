@@ -6,6 +6,10 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "^5.2.1",
+    "node-sass-glob-importer": "^5.3.2",
+    "resolve-url-loader": "^3.1.1",
+    "sass": "^1.26.11",
+    "sass-resources-loader": "^2.1.0",
     "stimulus": "^1.1.1",
     "turbolinks": "^5.2.0"
   },
