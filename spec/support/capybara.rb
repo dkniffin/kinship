@@ -3,7 +3,6 @@
 require "capybara/rails"
 require "capybara/rspec"
 require "capybara/apparition"
-require_relative "capybara_patches"
 
 Capybara.javascript_driver = :apparition
 Capybara.default_max_wait_time = 7
@@ -30,8 +29,6 @@ Capybara.register_driver :apparition do |app|
 end
 
 RSpec.configure do |config|
-  config.include Capybara::Angular::DSL, type: :feature
-
   config.before(:each, mobile: true) do
     page.driver.header(
       "USER_AGENT",
