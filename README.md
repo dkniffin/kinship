@@ -1,24 +1,45 @@
-# README
+# Kinship
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Kinship is an open-source, self-hosted genealogy app.
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Stack](#stack)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Seeded Logins](#seeded-logins)
 
-* System dependencies
+## Stack
 
-* Configuration
+- Rails - ~> 6.0.3
+- Ruby - 2.7.0
+- PostgreSQL
 
-* Database creation
+## Getting Started
 
-* Database initialization
+### Prerequisites
 
-* How to run the test suite
+If you haven't installed ruby, bundler, and postgresql do that first.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Installation
+Then, do the following to set up this app:
 
-* Deployment instructions
+```sh
+git clone git@github.com:dkniffin/kinship.git
+cd kinship
+bundle install
+bundle exec rails db:setup
+```
 
-* ...
+### Usage
+
+To run the app locally (using [overmind](https://github.com/DarthSim/overmind)):
+
+```sh
+bundle exec overmind start
+```
+
+Or run two sepearate processes for `bundle exec rails s` and `bin/webpack-dev-server`
+
+Then navigate to http://localhost:3000
