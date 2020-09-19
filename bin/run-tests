@@ -1,5 +1,0 @@
-#!/bin/sh
-
-bundle exec rspec &&
-bundle exec rubocop &&
-brakeman -q -w2 -z --no-summary
