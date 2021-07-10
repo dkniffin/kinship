@@ -3,6 +3,7 @@ services:
   - postgresql
 before_install:
   - gem install bundler -v 2.1.2
+  - yarn install
 before_script:
   - psql -c 'create database kinship_test' -U postgres
   - psql -c "CREATE USER kinship_test WITH CREATEDB PASSWORD 'kinship';" -U postgres
@@ -11,3 +12,4 @@ script:
   - bundle exec rspec
   - bundle exec rubocop
   - bundle exec slim-lint app
+  - yarn lint:css
