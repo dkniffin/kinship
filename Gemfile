@@ -18,6 +18,7 @@ gem "puma", "~> 4.1"
 gem "slim-rails"
 gem "turbolinks", "~> 5"
 gem "webpacker", "~> 5.0"
+gem "view_component", require: "view_component/engine"
 
 group :development, :test do
   gem "annotate"
