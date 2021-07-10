@@ -20,7 +20,7 @@ module AddFrozenStringLiteralComment
       body = f.read
 
       File.open(dist, "w") do |new_f|
-        new_f.write("# frozen_string_literal: true\n\n" + body)
+        new_f.write("# frozen_string_literal: true\n\n#{body}")
       end
     end
   end
