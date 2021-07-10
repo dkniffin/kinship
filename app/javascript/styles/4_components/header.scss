@@ -1,5 +1,7 @@
+@import "../globals";
+
 .header {
-  background-color: black;
-  color: white;
+  background-color: $color-black;
+  color: $color-white;
   height: 50px;
 }

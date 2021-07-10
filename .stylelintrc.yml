@@ -1,0 +1,44 @@
+extends: "stylelint-config-standard"
+
+plugins:
+  - stylelint-scss
+
+rules:
+  # Overrides from stylelint-config-standard
+  unit-allowed-list: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%', 'fr'                                # Other
+    ]
+  declaration-empty-line-before: null
+  selector-pseudo-element-colon-notation: "single"
+  length-zero-no-unit: null
+  no-descending-specificity: null
+  selector-type-no-unknown:
+    - true
+    - ignoreTypes: ["ion-icon"]
+
+  # Needed for stylelint-scss
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true
+
+  # Added by us
+  selector-max-id: 0
+  declaration-no-important: true
+  alpha-value-notation: "number"
+  color-function-notation: "legacy"
+  color-named: "never"
+  selector-no-vendor-prefix: true
+  no-empty-first-line: true
+  scss/dollar-variable-colon-space-after: "always-single-line"
+  scss/comment-no-loud: true
+  scss/no-duplicate-dollar-variables: true
+  scss/no-duplicate-mixins: true
+  media-feature-name-disallowed-list:
+    - ["min-width", "max-width"]
+    - message: "Use the media query mixins defined in app/javascript/styles/0_globals/media_queries.scss"

@@ -1,0 +1,25 @@
+language: ruby
+services:
+  - postgresql
+cache:
+  bundler: true
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - gem install bundler -v 2.1.2
+  - bundle install
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn install
+before_script:
+  - psql -c 'create database kinship_test' -U postgres
+  - psql -c "CREATE USER kinship_test WITH CREATEDB PASSWORD 'kinship';" -U postgres
+script:
+  - bundle exec rake db:setup
+  - bundle exec rspec
+  - bundle exec rubocop
+  - bundle exec slim-lint app
+  - yarn lint:css
+  - yarn lint:js
