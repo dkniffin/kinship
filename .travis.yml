@@ -13,3 +13,4 @@ script:
   - bundle exec rubocop
   - bundle exec slim-lint app
   - yarn lint:css
+  - yarn lint:js
