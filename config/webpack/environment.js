@@ -12,21 +12,10 @@ options.implementation = require('sass') // Use Dart-implementation of Sass (def
 const globCssImporter = require('node-sass-glob-importer')
 options.sassOptions.importer = globCssImporter() // Add support for file globbing
 
-// Make everything in `abstract/*` available in all SCSS files
-sassLoader.use.push({
-  loader: 'sass-resources-loader',
-  options: {
-    resources: [
-      './app/javascript/styles/0_globals/*.scss'
-    ]
-  }
-})
-
 // Resolve url() statements to relative paths
 const cssLoaderIndex = sassLoader.use.findIndex((e) => e.loader === 'css-loader')
 sassLoader.use.splice(cssLoaderIndex + 1, 0, {
   loader: "resolve-url-loader"
 })
-
 
 module.exports = environment
