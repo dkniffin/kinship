@@ -1,66 +1,42 @@
-// application.scss
+// This structure was inspired by https://sass-guidelin.es/#the-7-1-pattern
 
 // ============================================================================
-// 0. Globals
-// This section contains any Sass variables, helper functions and mixins. The
-// rule of thumb for this folder is that it should not output a single line of
-// CSS when compiled on its own.
+// 1. Vendors
+// This section is for any vendor/library imports and customizations.
 // ============================================================================
-// Note: these are loaded by the sass-resources-loader, so they don't need to
-// be imported here
-// @import "0_abstracts/*";
+@import "1_vendors/**/*.scss";
 
 // ============================================================================
-// 1. Vendor
-// This section is for any vendor imports. We may not actually have a directory
-// for this, since many of these styles would come from a package or gem, but
-// we should keep a placeholder for it, to show where it would go in the
-// hierarchy.
-// ============================================================================
-// @import "bootstrap";
-@import '1_vendor/**/*.scss';
-
-// ============================================================================
-// 2. Base
+// 2. Elements
 // This section contains styles for basic HTML elements and styles to account
 // for browser inconsistencies.
 // ============================================================================
-// @import 'reset'; // TODO:
-@import '2_base/**/*.scss';
+@import "reset-css";
+@import "2_elements/**/*.scss";
 
 // ============================================================================
 // 3. Layouts
 // This section contains any styles for layouts (reusable large sections of a
 // page, usually focused on spacing and layout)
-//
-// All classes in this section should be prefixed with `l-`
 // ============================================================================
-@import '3_layouts/**/*.scss';
+@import "3_layouts/**/*.scss";
 
 // ============================================================================
 // 4. Components
 // This section contains styles for all of our components (reusable small
 // pieces of a page)
-//
-// All classes in this section should be prefixed with `c-`
 // ============================================================================
-@import '4_components/**/*.scss';
+@import "4_components/**/*.scss";
 
 // ============================================================================
 // 5. Pages
 // This section contains page-specific styles that override the layout and
 // components used on the page.
 //
-// The directory structure should match up with the structure of `app/views`
-//
-// Alternatively, we could move these files over into `app/views`, to live alongside
-// the corresponding templates
-//
-// Either way, there should only be style files for full pages/views (not partials).
-//
-// All classes in this section should be prefixed with `p-`
+// Ideally, the directory structure should match up with the structure
+// of `app/views`
 // ============================================================================
-@import '5_pages/**/*.scss';
+@import "5_pages/**/*.scss";
 
 // ============================================================================
 // 6. Utilities
@@ -71,7 +47,5 @@
 //
 // This is the only section where it's okay to use !important without a comment
 // explaining why it's necessary.
-//
-// All classes in this section should be prefixed with `u-`
 // ============================================================================
-@import '5_utilities/**/*.scss';
+@import "6_utilities/**/*.scss";
