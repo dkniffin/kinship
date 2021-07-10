@@ -10,4 +10,4 @@ script:
   - bundle exec rake db:setup
   - bundle exec rspec
   - bundle exec rubocop
-  - bundle exec slim-lint .
+  - bundle exec slim-lint app
