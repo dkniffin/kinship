@@ -17,7 +17,9 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typeface-oxygen": "^1.1.13",
+    "typeface-roboto": "^1.1.13"
   },
   "version": "0.1.0",
   "devDependencies": {

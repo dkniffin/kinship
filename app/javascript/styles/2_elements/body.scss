@@ -1,0 +1,21 @@
+@import "../globals";
+
+body {
+  background-color: $color-grey;
+  color: $color-black;
+  line-height: $line-height-default;
+  font-family: $font-default;
+  font-size: $font-size-body;
+}
+
+main {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: $size-2u;
+  padding: $size-4u;
+
+  background-color: $color-white;
+  box-shadow: 2px 2px 4px #888;
+  border-radius: 6px;
+}
