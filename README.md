@@ -1,6 +1,6 @@
 # Kinship
 
-Kinship is an open-source, self-hosted genealogy app.
+Kinship is an open-source, self-hosted genealogy app. *It is very much still a work in progress*
 
 ## Table of Contents
 
@@ -8,7 +8,6 @@ Kinship is an open-source, self-hosted genealogy app.
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Seeded Logins](#seeded-logins)
 
 ## Stack
 
@@ -29,7 +28,7 @@ Then, do the following to set up this app:
 git clone git@github.com:dkniffin/kinship.git
 cd kinship
 bundle install
-bundle exec rails db:setup
+bundle exec rails db:setup create_dummy_data
 ```
 
 ### Usage
