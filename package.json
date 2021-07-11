@@ -8,6 +8,7 @@
     "@rails/webpacker": "5.3.0",
     "eslint": "^7.30.0",
     "node-sass-glob-importer": "^5.3.2",
+    "reset-css": "^5.0.1",
     "resolve-url-loader": "^3.1.1",
     "sass": "^1.26.11",
     "sass-loader": "^10",
@@ -16,7 +17,9 @@
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-scss": "^3.19.0",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "typeface-oxygen": "^1.1.13",
+    "typeface-roboto": "^1.1.13"
   },
   "version": "0.1.0",
   "devDependencies": {

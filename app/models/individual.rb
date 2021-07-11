@@ -25,4 +25,10 @@ class Individual < ApplicationRecord
   has_many :relationships, ->(individual) { # rubocop:disable Rails/InverseOf
     unscope(:where).where("individual_one_id = :id OR individual_two_id = :id", id: individual.id)
   }, class_name: "Relationship", dependent: :nullify
+
+  accepts_nested_attributes_for :birth
+
+  def full_name
+    [first_name, last_name].join(" ")
+  end
 end

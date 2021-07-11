@@ -17,6 +17,7 @@ gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 4.1"
 gem "slim-rails"
 gem "turbolinks", "~> 5"
+gem "view_component", require: "view_component/engine"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do

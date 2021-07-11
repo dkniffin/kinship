@@ -1,0 +1,3 @@
+ul
+  - @individuals.each do |individual|
+    li = link_to(individual.full_name, individual_path(individual))
