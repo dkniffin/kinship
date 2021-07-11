@@ -1,7 +1,16 @@
 @import "../globals";
 
 .c-header {
-  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: $size-2u;
+
+  background-color: $color-green;
   color: $color-white;
-  height: 50px;
+}
+
+.c-header_logo {
+  font-size: $font-size-h0;
 }
